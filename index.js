@@ -437,11 +437,13 @@ async function transcribe_gspeech(buffer) {
       const config = {
         encoding: 'LINEAR16',
         sampleRateHertz: 48000,
-        languageCode: 'en-US',  // https://cloud.google.com/speech-to-text/docs/languages
+        languageCode: 'ja-JP',  // https://cloud.google.com/speech-to-text/docs/languages
       };
       const request = {
         audio: audio,
         config: config,
+        useEnhanced: true,
+        model: 'latest_long',
       };
 
       const [response] = await gspeechclient.recognize(request);
@@ -454,7 +456,10 @@ async function transcribe_gspeech(buffer) {
   } catch (e) { console.log('transcribe_gspeech 368:' + e) }
 }
 
-//////////////////////////////////////////
-//////////////////////////////////////////
-//////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/// Run a web server to deploy on Render as web service ///
+///////////////////////////////////////////////////////////
+
+const keepAlive = require('./keep-alive');
+keepAlive();
 
