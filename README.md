@@ -1,3 +1,29 @@
+# このリポジトリについて
+
+## はじめに
+Discordでの音声チャンネルでの会話を、テキストチャンネルで話者ごとに文字起こししてくれるbotを動かすためのプログラムです。
+
+オリジナルのコードはIlya Nevolin氏が開発しており、それにNicklas Vedsted氏が手を加えたものをベースにしています。お二人やその他開発に寄与された方に感謝します。
+
+Renderの無料プランで運用するための改修などを行なっています。
+
+オリジナルのReadmeの記述は日本語の後にそのまま残しています。
+
+## 導入方法
+- botの準備
+    - DiscordのDeveloper portalでbotを作成
+    - 使用したいサーバーに導入
+- botを動かすプログラムの準備
+    - GitHubのアカウントを用意する
+    - このデポジトリをforkする
+- Google Speech-to-Textを使用できるようにする
+    - Google Cloudのアカウントを作成する
+    - Google Speech-to-Text APIを有効にする
+    - 新しいサービスアカウントを作成し、キーを保存
+- Renderにデプロイする
+    - GitHubのアカウントと接続する
+    - settings.jsonとgspeech_key.jsonをSecret Filesとして保存する
+
 # DiscordEarsBot
 A speech-to-text bot for Discord written in NodeJS.
 Can be useful for hearing impaired and deaf people.
